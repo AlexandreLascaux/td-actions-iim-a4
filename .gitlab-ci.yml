@@ -22,7 +22,7 @@ test:
     stage: test
     image: node:12
     script:
-        - sudo npm install
+        - npm install
         - npm install -g @angular/cli
         - ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
     cache:
