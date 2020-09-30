@@ -14,7 +14,7 @@ build:
             - dist/my-app
     only:
         - master
-tests:
+test:
     stage: tests
     image: node:12
     script:
