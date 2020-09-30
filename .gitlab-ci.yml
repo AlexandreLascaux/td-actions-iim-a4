@@ -1,12 +1,12 @@
 stages:
     - build
-    - tests
+    - test
 
 build:
     stage: build
     image: node:12
     script:
-        - sudo npm install
+        - npm install
         - npm install -g @angular/cli
         - ng build
     cache:
@@ -18,13 +18,13 @@ build:
             - dist/my-app
     only:
         - master
-tests:
-    stage: tests
-    image: circleci/node:12-browsers
+test:
+    stage: test
+    image: node:12
     script:
         - sudo npm install
         - npm install -g @angular/cli
-        - ng test --no-watch --browsers=ChromeHeadlessCI
+        - ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
     cache:
         paths:
             - ./node_modules
