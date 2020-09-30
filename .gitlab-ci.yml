@@ -22,7 +22,7 @@ test:
     stage: test
     image: circleci/node:12-browsers
     script:
-        - npm install
+        - sudo npm install
         - sudo npm install -g @angular/cli
         - ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
     cache:
