@@ -1,5 +1,5 @@
 stages:
-    - build
+    #- build
     - test
 
 build:
@@ -9,9 +9,9 @@ build:
         - npm install
         - npm install -g @angular/cli
         - ng build
-    cache:
-        paths:
-            - ./node_modules
+    #cache:
+    #    paths:
+    #        - ./node_modules
     artifacts:
         expire_in: 1 hour
         paths:
@@ -25,8 +25,8 @@ test:
         - npm install
         - npm install -g @angular/cli
         - ng test --no-watch --browsers=ChromeHeadlessCI
-    cache:
-        paths:
-            - ./node_modules
+    #cache:
+    #    paths:
+    #        - ./node_modules
     only:
         - master
