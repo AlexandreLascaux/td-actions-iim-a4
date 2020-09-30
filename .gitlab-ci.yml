@@ -15,7 +15,7 @@ build:
     only:
         - master
 test:
-    stage: tests
+    stage: test
     image: node:12
     script:
         - npm install
