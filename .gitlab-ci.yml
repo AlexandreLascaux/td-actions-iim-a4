@@ -1,0 +1,16 @@
+build:
+    stage: build
+    image: node:12
+    script:
+        - npm install
+        - npm install -g @angular/cli
+        - ng build
+    cache:
+        path:
+            - ./node_modules
+    artifacts:
+        expire_in: 1 hour
+        path:
+            - dist/my-app
+    only:
+        - master
