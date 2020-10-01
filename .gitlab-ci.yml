@@ -37,7 +37,7 @@ deploy:
     stage: deploy
     image: ruby:2.6
     script:
-        - gem install deploy
+        - gem install dpl
         - dpl --provider=heroku --app=$HEROKU_APP --api-key=$HEROKU_KEY --skip_cleanup=true
     only:
         - master
